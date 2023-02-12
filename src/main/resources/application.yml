@@ -1,2 +1,15 @@
 server:
   port: 9090
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:39307/helix_spark_iam?serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true
+    username: helix_spark_developer
+    password: Win2008@
+  jpa:
+    database: MySQL
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+
