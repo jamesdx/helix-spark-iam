@@ -1,6 +1,7 @@
 package com.helix.spark.iam.controller;
 
 import com.helix.spark.iam.vo.HsiUserVo;
+import com.helix.spark.web.response.Result;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,9 +19,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/iam/user")
 public class HsiUserController {
     @GetMapping("/{userId}")
-    public HsiUserVo loadUserDetailByUserId(@PathVariable("userId") String userId){
+    public Result<HsiUserVo> loadUserDetailByUserId(@PathVariable("userId") String userId){
         HsiUserVo hsiUserVo = new HsiUserVo();
         hsiUserVo.setUserId(userId);
-        return hsiUserVo;
+        return Result.success(hsiUserVo);
     }
 }
